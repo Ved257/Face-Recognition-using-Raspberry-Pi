@@ -4,10 +4,10 @@ import os
 
 #Change Path
 
-os.chdir("C:/Users/91897/OneDrive/Desktop/Dev/python-codes/Home_Intrusion_Detection/Test_2/Face-Recognition-using-Raspberry-Pi/data/harcascades")
+# os.chdir("../Face-Recognition-using-Raspberry-Pi/data/harcascades")
 recognizer = cv2.face.LBPHFaceRecognizer_create()
-recognizer.read('C:/Users/91897/OneDrive/Desktop/Dev/python-codes/Home_Intrusion_Detection/Test_2/memory/trainer.yml')
-cascadePath = "C:/Users/91897/OneDrive/Desktop/Dev/python-codes/Home_Intrusion_Detection/Test_2/Face-Recognition-using-Raspberry-Pi/data/harcascades/haarcascade_frontalface_default.xml"
+recognizer.read('../Face-Recognition-using-Raspberry-Pi/memory/trainer.yml')
+cascadePath = "../Face-Recognition-using-Raspberry-Pi/data/harcascades/haarcascade_frontalface_default.xml"
 faceCascade = cv2.CascadeClassifier(cascadePath);
 
 font = cv2.FONT_HERSHEY_SIMPLEX
@@ -16,7 +16,7 @@ font = cv2.FONT_HERSHEY_SIMPLEX
 id = 0
 
 # names related to ids: example ==> KUNAL: id=1,  etc
-names = ['None', 'Ved' ,'Shashank','Z', 'W']
+names = ['None', 'Aditya' ,'Ved','Z', 'W']
 
 # Initialize and start realtime video capture
 cam = cv2.VideoCapture(0)

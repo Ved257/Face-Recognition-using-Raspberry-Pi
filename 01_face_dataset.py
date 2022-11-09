@@ -5,7 +5,7 @@ cam.set(3, 640) # set video width
 cam.set(4, 480) # set video height
 
 #Change Path
-face_detector = cv2.CascadeClassifier('C:/Users/91897/OneDrive/Desktop/Dev/python-codes/Home_Intrusion_Detection/Test_2/Face-Recognition-using-Raspberry-Pi/data/harcascades/haarcascade_frontalface_default.xml')
+face_detector = cv2.CascadeClassifier('../Face-Recognition-using-Raspberry-Pi/data/harcascades/haarcascade_frontalface_default.xml')
 # For each person, enter one numeric face id
 face_id = input('\n Enter user ID end press <Enter> ==>  ')
 print("\n Initializing face capture. Look the camera and wait ...")
@@ -21,7 +21,7 @@ while(True):
         # Save the captured image into the datasets folder
         #Change Path
 
-        cv2.imwrite("C:/Users/91897/OneDrive/Desktop/Dev/python-codes/Home_Intrusion_Detection/Test_2/Face-Recognition-using-Raspberry-Pi/dataset/User." + str(face_id) + '.' + str(count) + ".jpg", gray[y:y+h,x:x+w])
+        cv2.imwrite("../Face-Recognition-using-Raspberry-Pi/dataset/User." + str(face_id) + '.' + str(count) + ".jpg", gray[y:y+h,x:x+w])
         cv2.imshow('image', img)
     k = cv2.waitKey(100) & 0xff # Press 'ESC' for exiting video
     if k == 27:
