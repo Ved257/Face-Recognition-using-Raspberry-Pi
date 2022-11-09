@@ -2,10 +2,12 @@ import cv2
 import numpy as np
 import os
 
-os.chdir("/home/pi/opencv-3.4.1/data/haarcascades")
+#Change Path
+
+os.chdir("C:/Users/91897/OneDrive/Desktop/Dev/python-codes/Home_Intrusion_Detection/Test_2/Face-Recognition-using-Raspberry-Pi/data/harcascades")
 recognizer = cv2.face.LBPHFaceRecognizer_create()
-recognizer.read('/home/pi/FaceRecognition/trainer/trainer.yml')
-cascadePath = "/home/pi/opencv-3.4.1/data/haarcascades/haarcascade_frontalface_default.xml"
+recognizer.read('C:/Users/91897/OneDrive/Desktop/Dev/python-codes/Home_Intrusion_Detection/Test_2/memory/trainer.yml')
+cascadePath = "C:/Users/91897/OneDrive/Desktop/Dev/python-codes/Home_Intrusion_Detection/Test_2/Face-Recognition-using-Raspberry-Pi/data/harcascades/haarcascade_frontalface_default.xml"
 faceCascade = cv2.CascadeClassifier(cascadePath);
 
 font = cv2.FONT_HERSHEY_SIMPLEX
@@ -14,7 +16,7 @@ font = cv2.FONT_HERSHEY_SIMPLEX
 id = 0
 
 # names related to ids: example ==> KUNAL: id=1,  etc
-names = ['None', 'Kunal', 'Kaushik', 'Atharv', 'Z', 'W']
+names = ['None', 'Ved' ,'Shashank','Z', 'W']
 
 # Initialize and start realtime video capture
 cam = cv2.VideoCapture(0)
@@ -40,6 +42,8 @@ while True:
     for(x,y,w,h) in faces:
         cv2.rectangle(img, (x,y), (x+w,y+h), (0,255,0), 2)
         id, confidence = recognizer.predict(gray[y:y+h,x:x+w])
+        confidence=float(confidence)
+        
 
         # Check if confidence is less them 100 ==> "0" is perfect match
         if (confidence < 100):
